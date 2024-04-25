@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Build Portfolio gallery using CSS grid.</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 1.2rem;
+      }
+      .container {
+        min-height: 100vh;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 1.5rem;
+        background: linear-gradient(to right, rgb(1, 46, 1), rgb(1, 25, 1));
+      }
+      .heading {
+        font-size: 3rem;
+        color: white;
+        text-align: center;
+      }
+      .subheading {
+        color: antiquewhite;
+        margin-top: 0.75rem;
+        text-align: justify;
+      }
+      .left-text {
+        flex-basis: 30%;
+      }
+      .gallery {
+        flex-basis: 50%;
+        display: grid;
+        gap: 0.5rem;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 10rem);
+      }
+      .box {
+        background-size: cover;
+        background-position: top;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #222;
+        background-blend-mode: hard-light;
+        transition: all 1s ease-in-out;
+      }
+      .row-2 {
+        grid-row: span 2;
+      }
+      .col-2 {
+        grid-column: span 2;
+      }
+      .box:hover {
+        background-color: #999;
+        background-position: center;
+        box-shadow: 0 0 4px white;
+        cursor: pointer;
+      }
+
+      /* media query for wigth<=1024px Laptop and others */
+      @media screen and (max-width: 1024px) {
+        .container {
+          flex-direction: column;
+          padding-block: 20px;
+        }
+        .gallery {
+          width: 100%;
+          grid-template-rows: repeat(7, 15rem);
+        }
+        .box {
+          grid-row: span 1;
+          grid-column: span 3;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-text">
+        <h2 class="heading"><u>My Portfolio </u></h2>
+        <p class="subheading">
+          The portfolio gallery is useful when your website contains different
+          types of content or so much content. With the help of a portfolio
+          gallery, you can easily display all the content on your front page to
+          the user.To create a portfolio gallery we will need only HTML and CSS.
+          We can use JavaScript also but in this article, limits are set so we
+          will use HTML and CSS only. Divide the whole article into two
+          different sections in the 1st section, we will create the structure
+          for the portfolio gallery, and in the second section, we will make
+          sure the gallery looks attractive.
+        </p>
+      </div>
+      <div class="gallery">
+        <div
+          class="box row-2"
+          style="
+            background-image: url(https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+          "
+        >
+          Hills
+        </div>
+        <div
+          class="box col-2"
+          style="
+            background-image: url(https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1948&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+          "
+        >
+          Water Fall
+        </div>
+        <div
+          class="box"
+          style="
+            background-image: url(https://plus.unsplash.com/premium_photo-1666323594456-cd1b09b2cbf4?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+          "
+        >
+          Oceans
+        </div>
+        <div
+          class="box row-2"
+          style="
+            background-image: url(https://images.unsplash.com/photo-1498847559558-1e4b1a7f7a2f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+          "
+        >
+          Rain
+        </div>
+        <div
+          class="box col-2"
+          style="
+            background-image: url(https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+          "
+        >
+          Mountains
+        </div>
+        <div
+          class="box"
+          style="
+            background-image: url(https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+          "
+        >
+          Trees
+        </div>
+        <div
+          class="box col-2"
+          style="
+            background-image: url(https://media.istockphoto.com/id/469852152/photo/arambol-beach-goa.jpg?s=2048x2048&w=is&k=20&c=npnyKKXnenSY6h6opmHXsKwnOQNLWhzjYVS42zW9bB0=);
+          "
+        >
+          Beach
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
